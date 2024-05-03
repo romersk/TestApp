@@ -11,7 +11,7 @@ namespace TestApp
         public Form1()
         {
             InitializeComponent();
-            position.Items.AddRange(new string[] { "HR Менеджер", "Разработчик", "Менеджер" });
+            position.Items.AddRange(new string[] { "HR РњРµРЅРµРґР¶РµСЂ", "Р Р°Р·СЂР°Р±РѕС‚С‡РёРє", "РњРµРЅРµРґР¶РµСЂ" });
             company = new Company();
         }
 
@@ -28,19 +28,19 @@ namespace TestApp
                 Employee? employee = null;
                 switch (position.SelectedItem.ToString())
                 {
-                    case "Разработчик":
+                    case "Р Р°Р·СЂР°Р±РѕС‚С‡РёРє":
                         {
                             employee = new Developer(name, Convert.ToInt32(age));
                             company.DevelopmentDepartment.AddEmployee(employee);
                             break;
                         }
-                    case "Менеджер":
+                    case "РњРµРЅРµРґР¶РµСЂ":
                         {
                             employee = new Manager(name, Convert.ToInt32(age));
                             company.ManagementDepartment.AddEmployee(employee);
                             break;
                         }
-                    case "HR Менеджер":
+                    case "HR РњРµРЅРµРґР¶РµСЂ":
                         {
                             employee = new HRManager(name, Convert.ToInt32(age));
                             company.HRDepartment.AddEmployee(employee);
@@ -56,7 +56,7 @@ namespace TestApp
             }
             else
             {
-                MessageBox.Show("Введены не все данные");
+                MessageBox.Show("Р’РІРµРґРµРЅС‹ РЅРµ РІСЃРµ РґР°РЅРЅС‹Рµ");
             }
         }
 
@@ -102,19 +102,19 @@ namespace TestApp
                     if (employee != null)
                     {
                         employee.SetHours(Convert.ToInt32(hours));
-                        MessageBox.Show("Зарплата сотрудника " + employee.GetName() + " - " + employee.CalculateSalary() + "$");
+                        MessageBox.Show("Р—Р°СЂРїР»Р°С‚Р° СЃРѕС‚СЂСѓРґРЅРёРєР° " + employee.GetName() + " - " + employee.CalculateSalary() + "$");
                         nameCalc.Clear();
                         hoursCald.Clear();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Такого пользователя нет");
+                    MessageBox.Show("РўР°РєРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅРµС‚");
                 }
             }
             else
             {
-                MessageBox.Show("Введены не все данные");
+                MessageBox.Show("Р’РІРµРґРµРЅС‹ РЅРµ РІСЃРµ РґР°РЅРЅС‹Рµ");
             }
         }
 
@@ -131,17 +131,17 @@ namespace TestApp
                     {
                         switch (employee.GetPosition())
                         {
-                            case "Разработчик":
+                            case "Р Р°Р·СЂР°Р±РѕС‚С‡РёРє":
                                 {
                                     company.DevelopmentDepartment.DeleteEmployee(employee);
                                     break;
                                 }
-                            case "Менеджер":
+                            case "РњРµРЅРµРґР¶РµСЂ":
                                 {
                                     company.ManagementDepartment.DeleteEmployee(employee);
                                     break;
                                 }
-                            case "HR Менеджер":
+                            case "HR РњРµРЅРµРґР¶РµСЂ":
                                 {
                                     company.HRDepartment.DeleteEmployee(employee);
                                     break;
@@ -154,12 +154,12 @@ namespace TestApp
                 }
                 else
                 {
-                    MessageBox.Show("Такого пользователя нет");
+                    MessageBox.Show("РўР°РєРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅРµС‚");
                 }
             }
             else
             {
-                MessageBox.Show("Введены не все данные");
+                MessageBox.Show("Р’РІРµРґРµРЅС‹ РЅРµ РІСЃРµ РґР°РЅРЅС‹Рµ");
             }
         }
 

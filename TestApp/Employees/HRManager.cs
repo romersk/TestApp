@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +17,7 @@ namespace TestApp.Employees
         public override void PrintInfo()
         {
             base.PrintInfo();
-            Console.WriteLine("Additional information for Manager");
+            Console.WriteLine("Это новая информация о HR Менеджере");
         }
 
         public override double CalculateSalary()
